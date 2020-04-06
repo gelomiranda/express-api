@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+    table.table.table-bordered
+        thead
+            tr
+            th(scope='col',width='2%') #
+            th(scope='col') Name
+            th(scope='col',width='5%') Birth Date
+            th(scope='col',width='7%') Civil Status
+            th(scope='col',width='6%') Contact Number
+            th(scope='col') Contact Person
+            th.text-center(scope='col') Action
+        tbody
+        - var n = 1;
+        each patient in patients
+                tr
+                th(scope='row') #{n++}
+                td #{patient.fullName}
+                td #{patient.dateOfBirth}
+                td #{patient.civilStatus}
+                td #{patient.contactNumber}
+                td #{patient.personToContact}
+                td.text-center
+                    a
+                        i.fas.fa-fw.fa-pen-square.text-primary 
+                    a
+                        i.fas.fa-fw.fa-minus-circle.text-danger 
+                    a(href='patients/' + patient.id + '/history')
+                        i.fas.fa-fw.fa-file-medical-alt.text-danger 
+
+                

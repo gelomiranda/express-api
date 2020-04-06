@@ -1,0 +1,61 @@
+extends ../layout
+
+block content
+    h1 Patient record
+    p Create new patient record.
+    if errors
+      .alert.alert-danger(role='alert')
+        ul
+          each error in errors
+            li #{error}
+    form(action='/patients' method='post')
+      .row
+        .col-sm
+          .form-group
+            label(for='firstName') First Name
+            input#firstName.form-control(type='text',name='firstName',value=data.firstName)
+          .form-group
+            label(for='middleName') Middle Name
+            input#middleName.form-control(type='text',name='middleName',value=data.middleName)
+          .form-group
+            label(for='lastName') Last Name
+            input#lastName.form-control(type='text',name='lastName',value=data.lastName)
+        .col-sm
+          .form-group
+            label(for='gender') Gender
+            select#gender.form-control.form-control-sm(name='gender')
+              option(value='Male',selected=data.gender == 'Male')  Male
+              option(value='Female',selected=data.gender == 'Female')  Female
+          .form-group
+            label(for='dateOfBirth') Birth Date
+            input#dateOfBirth.form-control(type='date',name='dateOfBirth',value=data.dateOfBirth)
+          .form-group
+            label(for='civilStatus') Civil Status
+            select#civilStatus.form-control.form-control-sm(name='civilStatus')
+              option(value='Single',selected=data.civilStatus == 'Single') Single
+              option(value='Married',selected=data.civilStatus == 'Married') Married
+              option(value='Widow',selected=data.civilStatus == 'Widow') Widow
+        .col-sm
+          .form-group
+            label(for='philHealthNo') Philheath Number
+            input#philhealthNumber.form-control(type='text',name='philHealthNo',value=data.philHealthNo)
+          .form-group
+            label(for='sssNo') SSS No
+            input#sssNo.form-control(type='text',name='sssNo',value=data.sssNo)
+          .form-group
+            label(for='contactNumber') Contact Number
+            input#contactNumber.form-control(type='number',name='contactNumber',value=data.contactNumber)  
+        
+      .row
+        .col-sm
+          .form-group
+            label(for='address') Complete Address
+            input#address.form-control(type='text',name='address',value=data.address)
+          .form-group
+            label(for='personToContact') Contact Person In Case of Emergency
+            input#personToContact.form-control(type='text',name='personToContact',value=data.personToContact)
+          .form-group
+            label(for='personToContactNo') Contact Person In Case of Emergency | Contact Number
+            input#personToContact.form-control(type='text',name='personToContactNo',value=data.personToContactNo)
+        
+      button.btn.float-right.btn-primary(type='submit') Save
