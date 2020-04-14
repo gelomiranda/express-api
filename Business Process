@@ -1,0 +1,34 @@
+Admin
+ - Patient Record
+ - Requirements 
+    - Latest 3 treatment from previous clinic or hospital
+    - Latest chest xray
+
+
+Nurse
+ - Orientation
+ - Provide schedule
+  - First day of dialysis
+   - Can change nephro
+ - Type of vascular access
+
+Medtech
+Monthly Laboratory form  
+- Hepa profile (Every 6 Months)
+
+Nurse
+Medication Sheet
+ -Every Month
+ - Delete (Discountinue)
+
+Injection Monitoring Sheet
+ - Date (Injection)
+
+ BT Monitorong
+
+ Standing Order
+
+ Problem List
+
+Nurse Daily Treatment Sheet
+ - 

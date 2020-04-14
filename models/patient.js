@@ -8,6 +8,12 @@ module.exports = (sequelize, DataTypes) => {
         max: 20
       }
     },
+    fullName: {
+      type: DataTypes.VIRTUAL,
+      get: function () {
+        return this.firstName + ' ' + this.lastName;
+      }
+    },
     middleName: {
       type:DataTypes.STRING,
       validate:{
@@ -43,7 +49,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Patient.associate = function(models) {
-    // associations can be defined here
+    Patient.hasMany(models.History, { foreignKey: 'patientId', onDelete: 'restrict' });
   };
   return Patient;
 };
