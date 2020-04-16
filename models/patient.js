@@ -50,6 +50,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Patient.associate = function(models) {
     Patient.hasMany(models.History, { foreignKey: 'patientId', onDelete: 'restrict' });
+    Patient.hasMany(models.Document, { foreignKey: 'patientId', onDelete: 'restrict' });
   };
   return Patient;
 };
